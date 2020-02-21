@@ -1,0 +1,25 @@
+{
+  "name": "image-compression",
+  "version": "1.0.0",
+  "description": "'online image compression'",
+  "main": "server.js",
+  "scripts": {
+    "devstart": "nodemon starts running"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaketych/js-image-comprassion.git"
+  },
+  "author": "Alexandr Laketych",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alaketych/js-image-comprassion/issues"
+  },
+  "homepage": "https://github.com/alaketych/js-image-comprassion#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.7.3",
+    "nodemon": "^2.0.2"
+  }
+}
