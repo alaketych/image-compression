@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAKECOMPRESSION</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    {{> header }}
+
+    <main>
+        <article>
+            <h1>Choose your compression:</h1>
+
+            <div class="radio-toolbar">
+                <input type="radio" id="radioApple" name="radioFruit" value="apple" checked>
+                <label for="radioApple">lossy</label>
+
+                <input type="radio" id="radioBanana" name="radioFruit" value="banana">
+                <label for="radioBanana">lossless (only for JPG/PNG)</label>
+            </div>
+
+            <i class="fa fa-cloud"></i>
+
+            <div>Drag and drop your file here</div>
+            <span>or</span>
+
+            <button>select file</button>
+        </article>
+    </main>
+</body>
+
+</html>
