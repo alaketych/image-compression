@@ -1,0 +1,3 @@
+Dropzone.oprions.uploads = {
+
+}

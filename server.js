@@ -1,6 +1,5 @@
 const path = require('path')
 const express = require('express')
-const handlebars = require('handlebars')
 const expressHandlebars = require('express-handlebars')
 
 const app = express()
