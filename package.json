@@ -18,11 +18,8 @@
   "homepage": "https://github.com/alaketych/js-image-comprassion#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-favicon": "^2.0.1",
     "express-handlebars": "^3.1.0",
-    "filepond": "^4.11.0",
     "handlebars": "^4.7.3",
-    "nodemon": "^2.0.2",
-    "serve-favicon": "^2.5.0"
+    "nodemon": "^2.0.2"
   }
 }
