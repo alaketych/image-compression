@@ -1,3 +1,0 @@
-Dropzone.oprions.uploads = {
-
-}

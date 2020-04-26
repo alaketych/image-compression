@@ -119,23 +119,15 @@ footer {
     width: 443px;
     position: absolute;
 
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'Tomorrow', sans-serif;
 
+    color: #000000;
     text-align: center;
     background: #ff8000;
 }
 
-
-footer .fa-download {
-    padding: 7px;
-    font-size: 17px;
-    text-transform: uppercase;
-}
-
 footer a {
-    font-size: 15px;
-    font-family: 'Tomorrow', sans-serif;
     color: #000000;
     text-decoration: none;
 }
@@ -154,7 +146,7 @@ main {
     padding: 0px 75px 0px 75px;
 }
 
-article {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,11 +158,10 @@ article {
     border: 5px dashed #ff8000;
 }
 
-article h1 {
+form h1 {
     color: #b0b0b0;
     font-size: 30px;
     font-weight: 500;
-    text-align: center;
     font-family: 'Exo 2', sans-serif;
 
     margin: 25px 0px 0px 0px;
@@ -214,38 +205,26 @@ article h1 {
     background: red;
 }
 
-article form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-article .fa {
+form .fa {
     color: #ff8000;
     font-size: 200px;
-    text-align: center;
-    align-content: center;
-    align-self: center;
 
-    text-align: center;
     margin: 75px 0px 0px 0px;
 }
 
-article div, span {
+form div, span {
     color: #8a8a8a;
     font-size: 20px;
-    text-align: center;
     font-family: 'Exo 2', sans-serif;
 }
 
-article button {
+form button {
     color: #ff8000;
     background: #000000;
 
     border: 0px;
     border-radius: 5px;
     font-size: 17px;
-    align-self: center;
     font-family: 'Exo 2', sans-serif;
 
     width: 150px;
@@ -257,12 +236,12 @@ article button {
     text-transform: uppercase;
 }
 
-article button:hover {
+form button:hover {
     color: #ffffff;
     background: #ff8000;
 }
 
-article button:active {
+form button:active {
     color: #000000;
     background: #e3e3e3;
     box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
