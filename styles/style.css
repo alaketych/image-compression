@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+}
+
+header {
+    height: 100vh;
+    background: #002c4f;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header nav .logo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ff8000;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+}
+
+header nav .logo a p:nth-child(2) {
+    color: #c3c3c3;
+    margin: -55px 0px 0px 35px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+
+    color: #e3e3e3;
+    background: #002949;
+    font-family: 'Exo 2', sans-serif;
+
+    box-shadow: 0 0 0 1px rgba(255,255,255,.05), inset 0 0 0.25em 0 rgba(0,0,0,.25);
+    padding: 0px 20px 0px 20px;
+    margin-top: 30px;
+
+    text-align: justify;
+    line-height: 20px;
+}
+
+section div {
+    margin-top: 23px;
+}
+
+.fa.pull-left {
+    margin-right: .3em;
+}
+
+.fa-fw {
+    width: 1.8em;
+    text-align: center;
+}
+
+.fa-border {
+    padding: .2em .25em .15em;
+    border: solid 0.08em #eeeeee;
+    border-radius: .1em;
+}
+
+.fa-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.fa-2x {
+    font-size: 1em;
+}
+
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-copy:before, .fa-files-o:before {
+    content: "\f0c5";
+}
+:before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.pull-left {
+    float: left!important;
+}
+
+hr {
+    display: block;
+    width: 100%;
+    content: '';
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: #171E29;
+    border-color: rgba(0,0,0,.25);
+    -webkit-box-shadow: inset 0 1px 0 0 rgba(255,255,255,.075), 0 1px 0 0 rgba(255,255,255,.075);
+    box-shadow: inset 0 1px 0 0 rgba(255,255,255,.075), 0 1px 0 0 rgba(255,255,255,.075);
+}
+
+
+
+
+
+
+footer {
+    bottom: 0;
+    width: 443px;
+    position: absolute;
+
+    font-size: 20px;
+    font-family: 'Tomorrow', sans-serif;
+
+    color: #000000;
+    text-align: center;
+    background: #ff8000;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+
+
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*background: #00355f;
+    */background: #ebeff2;
+    padding: 0px 75px 0px 75px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 85vh;
+
+    background: #ffffff;
+    border: 5px dashed #ff8000;
+}
+
+form h1 {
+    color: #b0b0b0;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Exo 2', sans-serif;
+
+    margin: 25px 0px 0px 0px;
+}
+
+.radio-toolbar {
+    margin: 10px;
+}
+
+.radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    color: #8a8a8a;
+    background-color: #f0f0f0;
+
+    font-size: 16px;
+    text-transform: capitalize;
+    font-family: 'Exo 2', sans-serif;
+
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.radio-toolbar label:hover {
+    color: #000000;
+    cursor: pointer;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    color: #ffffff;
+    background-color: #ff8000;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+.radio-toolbar input[type="radio"]:active {
+    background: red;
+}
+
+form .fa {
+    color: #ff8000;
+    font-size: 200px;
+
+    margin: 75px 0px 0px 0px;
+}
+
+form div, span {
+    color: #8a8a8a;
+    font-size: 20px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+form button {
+    color: #ff8000;
+    background: #000000;
+
+    border: 0px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: 'Exo 2', sans-serif;
+
+    width: 150px;
+    margin-top: 25px;
+    padding: 10px 20px;
+
+    outline: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+form button:hover {
+    color: #ffffff;
+    background: #ff8000;
+}
+
+form button:active {
+    color: #000000;
+    background: #e3e3e3;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
