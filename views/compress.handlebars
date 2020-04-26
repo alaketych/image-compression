@@ -1,18 +1,18 @@
-<article>
-    <form action="/upload-image" class="dropzone">
-        <h1>Choose your compression:</h1>
+<form action="/">
+    <h1>Choose your compression:</h1>
 
-        <div class="radio-toolbar">
-            <input type="radio" id="radioApple" name="radioFruit" value="apple" checked>
-            <label for="radioApple">lossy</label>
+    <div class="radio-toolbar">
+        <input type="radio" id="lossy" name="typeCompression" value="lossy" checked>
+        <label for="lossy">lossy</label>
 
-            <input type="radio" id="radioBanana" name="radioFruit" value="banana">
-            <label for="radioBanana">lossless (only for JPG/PNG)</label>
-        </div>
+        <input type="radio" id="lossless" name="typeCompression" value="lossless">
+        <label for="lossless">lossless (only for JPG/PNG)</label>
+    </div>
 
-        <i class="fa fa-cloud"></i>
+    <i class="fa fa-cloud"></i>
 
-        <div>Drag and drop your file here</div>
-        <span>or</span>
-    </form>
-</article>
+    <div>Drag and drop your file here</div>
+    <span>or</span>
+
+    <button>select file</button>
+</form>
