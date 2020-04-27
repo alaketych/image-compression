@@ -116,7 +116,7 @@ hr {
 
 footer {
     bottom: 0;
-    width: 443px;
+    width: 100%;
     position: absolute;
 
     font-size: 20px;
@@ -245,4 +245,29 @@ form button:active {
     color: #000000;
     background: #e3e3e3;
     box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+form input[type="file"] {
+    outline: 0;
+    font-size: 17px;
+    margin-left: 60px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.custom-file-input::before {
+    cursor: pointer;
+    content: 'Select some files';
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border-bottom: 2px solid #ff8000;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
 }
