@@ -1,4 +1,4 @@
-<form action="/">
+<form method="post" enctype="multipart/form-data" action="/upload">
     <h1>Choose your compression:</h1>
 
     <div class="radio-toolbar">
@@ -11,8 +11,7 @@
 
     <i class="fa fa-cloud"></i>
 
-    <div>Drag and drop your file here</div>
-    <span>or</span>
+    <input name="uploadImage" type="file" class="custom-file-input">
 
-    <button>select file</button>
+    <button type="submit">submit</button>
 </form>
