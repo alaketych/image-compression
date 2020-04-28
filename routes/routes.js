@@ -12,7 +12,8 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({
-    storage: storage
+    storage: storage,
+    limits: {fileSize: 1000000000},
 }).single('uploadImage');
 
 router.get('/', (request, response) => {
@@ -22,13 +23,23 @@ router.get('/', (request, response) => {
 router.post('/upload', (request, response) => {
     upload(request, response, (error) => {
         if(error) {
-            console.log('error')
+            request.flash('error_message', 'Image file is too big.')
         }
         else {
-            console.log(request.file)
-            response.send('test')
+            if(request.file == undefined) {
+                response.render('compress')
+                request.flash('error_message', 'Image file has not been choosed')
+            }
+            else {
+                response.render('result')
+                console.log(request.file)
+            }
         }
     })
+})
+
+router.get('/result', (request, response) => {
+    response.render('result')
 })
 
 module.exports = router
