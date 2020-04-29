@@ -1,19 +1,19 @@
 {{#if success_message}}
-    <div class="alert alert-success">
+    <div class="alert alert-success animated bounceInUp" id="foo">
         {{ success_message }}
 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <span class="alertX" aria-hidden="true" onclick="setTimeout(function () {document.getElementById('foo').style.display='none'}, 10000); return false">&times;</span>
         </button>
     </div>
 {{/if}}
 
 {{#if error_message}}
-    <div class="alert alert-error">
+    <div class="alert alert-error animated bounceInUp" id="foo">
         {{ error_message }}
 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <span class="alertX" aria-hidden="true" onclick="setTimeout(function () {document.getElementById('foo').style.display='none'}, 10000); return false">&times;</span>
         </button>
     </div>
 {{/if}}
