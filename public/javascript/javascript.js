@@ -1,7 +1,3 @@
-const
-
-function closeit(){
-    document.getElementsByClassName('alertX').setAttribute("style", "display:none");
+function closeMessage() {
+    document.getElementById('foo').style.display='none'
 }
-
-setTimeout("closeit", 1000);
