@@ -1,4 +1,4 @@
-<form method="post" enctype="multipart/form-data" action="/upload">
+<aside>
     <h1>Choose your compression:</h1>
 
     <div class="radio-toolbar">
@@ -9,7 +9,7 @@
         <label for="lossless">lossless (only for JPG/PNG)</label>
     </div>
 
-    <i class="fa fa-cloud"></i>
-    <input name="uploadImage" type="file" class="custom-file-input">
-    <button type="submit">submit</button>
-</form>
+    <img class="uploadedImage" src="{{imageUrl}}"></img>
+
+    <button>compress</button>
+</aside>
