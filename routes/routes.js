@@ -13,17 +13,31 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage,
-    limits: {fileSize: 100000},
+    limits: {fileSize: 100000000},
+    fileFilter: function(request, file, callback) {
+        const ext = path.extname(file.originalname).toLowerCase()
+
+        if(ext !== '.jpg'   && ext !== '.jpeg'  && ext !== '.jpe'  && ext !== '.jif'  && ext !== '.jfif' && ext !== '.jfi' &&     //jpg
+           ext !== '.jp2'   && ext !== '.j2k'   && ext !== '.jpf'  && ext !== '.jpx'  && ext !== '.jpm'  && ext !== 'mj2'  &&     //jpeg2000
+           ext !== '.png'   && ext !== '.gif'   && ext !== '.webp' && ext !== '.tiff' && ext !== '.tif'  &&                       //png + gif + webp + tiff
+           ext !== '.raw'   && ext !== '.arw'   && ext !== '.cr2'  && ext !== '.hrw'  && ext !== '.k25'  &&                       //raw
+           ext !== '.ind'   && ext !== '.indd'  && ext !== '.indt' &&                                                             //indd
+           ext !== '.bmp'   && ext !== '.dip'   &&                                                                                //bmp
+           ext !== '.heif'  && ext !== '.heic'  ) {                                                                               //heif
+            return callback(new Error)
+        }
+        callback(null, true)
+    }
 }).single('uploadImage');
 
 router.get('/', (request, response) => {
-    response.render('compress')
+    response.render('upload')
 })
 
 router.post('/upload', (request, response) => {
     upload(request, response, (error) => {
         if(error) {
-            request.flash('error_message', 'The download file exceeds! The file must not be larger than 100000 MB')
+            request.flash('error_message', 'Only images are allowed')
             response.redirect('/')
         }
         else {
@@ -35,7 +49,7 @@ router.post('/upload', (request, response) => {
             }
             else {
                 request.flash('success_message', 'Image was uploaded successfully.')
-                response.redirect('/')
+                response.redirect('/compress')
 
                 console.log(request.file)
             }
@@ -43,8 +57,10 @@ router.post('/upload', (request, response) => {
     })
 })
 
-router.get('/result', (request, response) => {
-    response.render('result')
+router.get('/compress', (request, response) => {
+    response.render('compress', {
+        file: `uploads/${request.file}`
+    })
 })
 
 module.exports = router
