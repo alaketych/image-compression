@@ -1,7 +1,10 @@
-const path = require('path')
-const express = require('express')
-const multer = require('multer')
-const router = express.Router()
+const fs        = require('fs');
+const path      = require('path')
+const express   = require('express')
+const multer    = require('multer')
+const router    = express.Router()
+
+router.use(express.static(__dirname + '/public'))
 
 const storage = multer.diskStorage({
     destination: 'public/uploads/',
@@ -14,7 +17,7 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
     limits: {fileSize: 100000000},
-    fileFilter: function(request, file, callback) {
+    fileFilter: (request, file, callback) => {
         const ext = path.extname(file.originalname).toLowerCase()
 
         if(ext !== '.jpg'   && ext !== '.jpeg'  && ext !== '.jpe'  && ext !== '.jif'  && ext !== '.jfif' && ext !== '.jfi' &&     //jpg
@@ -23,7 +26,7 @@ const upload = multer({
            ext !== '.raw'   && ext !== '.arw'   && ext !== '.cr2'  && ext !== '.hrw'  && ext !== '.k25'  &&                       //raw
            ext !== '.ind'   && ext !== '.indd'  && ext !== '.indt' &&                                                             //indd
            ext !== '.bmp'   && ext !== '.dip'   &&                                                                                //bmp
-           ext !== '.heif'  && ext !== '.heic'  ) {                                                                               //heif
+           ext !== '.heif'  && ext !== '.heic') {                                                                               //heif
             return callback(new Error)
         }
         callback(null, true)
@@ -49,7 +52,7 @@ router.post('/upload', (request, response) => {
             }
             else {
                 request.flash('success_message', 'Image was uploaded successfully.')
-                response.redirect('/compress')
+                response.redirect(`/${request.file.filename}`);
 
                 console.log(request.file)
             }
@@ -57,10 +60,21 @@ router.post('/upload', (request, response) => {
     })
 })
 
-router.get('/compress', (request, response) => {
-    response.render('compress', {
-        file: `uploads/${request.file}`
-    })
+router.get('/:filename', (request, response) => {
+    let fileName = request.params.filename;
+
+    let pathToCheck = path.join(__dirname, '../public/uploads/' + fileName);
+    //console.log('pathToCheck==', pathToCheck);
+
+    if (fs.existsSync(pathToCheck)) {
+        let imageDestination = `${request.protocol}://${request.headers.host}/uploads/${fileName}`;
+        response.render('compress', {
+            userImage: imageDestination
+        })
+    }
+    else {
+        response.send('Oops.')
+    }
 })
 
 module.exports = router
