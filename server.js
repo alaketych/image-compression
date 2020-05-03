@@ -14,7 +14,7 @@ app.use(session({
 }))
 app.use(express.static(__dirname + '/public'))
 app.use((request, response, next) => {
-  response.locals.error_message = request.flash('error_message')
+  response.locals.error_message   = request.flash('error_message')
   response.locals.success_message = request.flash('success_message')
   next()
 })
