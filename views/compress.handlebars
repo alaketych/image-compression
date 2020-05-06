@@ -1,7 +1,7 @@
-<aside>
+<form method="post" enctype="multipart/form-data" action="/compress">
     <h1>Choose your compression:</h1>
 
-    <div class="radio-toolbar">
+    <div class="radio-toolbar" id="ff">
         <input type="radio" id="lossy" name="typeCompression" value="lossy" checked>
         <label for="lossy">lossy</label>
 
@@ -12,4 +12,4 @@
     <img class="uploadedImage" src="{{userImage}}"></img>
 
     <button class="compress">compress</button>
-</aside>
+</form>
